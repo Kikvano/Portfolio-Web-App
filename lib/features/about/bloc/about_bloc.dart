@@ -6,7 +6,6 @@ part 'about_state.dart';
 class AboutBloc extends Bloc<AboutEvent, AboutState> {
   AboutBloc() : super(AboutInitial());
 
-  @override
   Stream<AboutState> mapEventToState(AboutEvent event) async* {
     if (event is FetchAboutInfo) {
       yield AboutLoading();
