@@ -43,11 +43,11 @@ class _MainAppState extends State<MainApp> {
       routerDelegate: _router.routerDelegate,
       routeInformationParser: _router.routeInformationParser,
       routeInformationProvider: _router.routeInformationProvider,
-      theme: ThemeData(
+      /* theme: ThemeData(
         textTheme: GoogleFonts.openSansTextTheme(
           Theme.of(context).textTheme,
         ),
-      ),
+      ),*/
     );
   }
 }

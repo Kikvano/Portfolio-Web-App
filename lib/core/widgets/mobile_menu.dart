@@ -57,7 +57,7 @@ Widget buildMobileMenu(BuildContext context, int page) {
               onTap: () {},
               child: ListTile(
                 leading: Icon(Icons.work, color: isTileHovered[2] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context)),
-                title: Text('Experiance', style: TextStyle(color: isTileHovered[2] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
+                title: Text('Skills', style: TextStyle(color: isTileHovered[2] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
                 hoverColor: AppTheme.primaryActionColor(context),
                 onTap: () {
                   Navigator.pop(context); // Close the drawer
@@ -79,7 +79,7 @@ Widget buildMobileMenu(BuildContext context, int page) {
                 },
               ),
             ),
-          if (page != 4)
+          /*  if (page != 4)
             InkWell(
               onHover: (value) => setState(() => isTileHovered[4] = value),
               onTap: () {},
@@ -93,6 +93,7 @@ Widget buildMobileMenu(BuildContext context, int page) {
                 },
               ),
             ),
+      */
         ],
       ),
     );

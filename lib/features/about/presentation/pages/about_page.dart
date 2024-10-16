@@ -6,6 +6,7 @@ import '../../../../core/utils/rsponsive.dart';
 import '../../../../core/widgets/mobile_menu.dart';
 import '../../bloc/about_bloc.dart';
 import '../widgets/appbar.dart';
+import '../widgets/desktop_body.dart';
 import '../widgets/mobile_body.dart';
 
 class AboutPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _AboutPageState extends State<AboutPage> {
           } else if (state is AboutError) {
             return Center(child: Text(state.message));
           }
-          return buildMobileBody(context);
+          return Responsive.isMobile(context) ? buildMobileBody(context) : buildDesktopBody(context);
         },
       ),
     );

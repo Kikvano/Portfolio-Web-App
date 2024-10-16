@@ -158,7 +158,7 @@ Widget buildMobileBody(
                   const Text("IRAKLI KIKVADZE", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 10),
                   const TypingTextEffect(
-                    texts: ['Mobile Developer', 'Embedded Developer', 'PCB Designer', 'Telecoms Engineer'],
+                    texts: ['Mobile Developer', 'Embedded Developer', 'PCB Designer'],
                   ),
                   const SizedBox(height: 30),
                   Padding(
@@ -182,7 +182,7 @@ Widget buildMobileBody(
                           ),
                         ),
                         InkWell(
-                          onTap: () => urlLauncher(Uri.parse('https://github.com/Kikvano')),
+                          onTap: () => urlLauncher(Uri.parse('https://linkedin.com/in/irakli-kikvadze-a79151314')),
                           onHover: (value) => setState(() {
                             isIconsHover[1] = value;
                           }),

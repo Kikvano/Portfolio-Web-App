@@ -5,6 +5,7 @@ import '../../../../core/utils/rsponsive.dart';
 import '../models/animation_controllers.dart';
 import '../models/animations_model.dart';
 import '../widgets/appbar.dart';
+import '../widgets/desktop_body.dart';
 import '../widgets/mobile_body.dart';
 import '../../../../core/widgets/mobile_menu.dart';
 
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       upwardMoveAnimation: Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0, -0.6)).animate(
         CurvedAnimation(parent: animationControllers.upwardMoveController, curve: Curves.easeInOut),
       ),
-      sideMoveAnimation: Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0.5, 0)).animate(
+      sideMoveAnimation: Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0.6, 0)).animate(
         CurvedAnimation(parent: animationControllers.upwardMoveController, curve: Curves.easeInOut),
       ),
       flipAnimation: Tween<double>(begin: 0, end: 1).animate(
@@ -88,14 +89,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       backgroundColor: AppTheme.appBackgroundColor(context),
       appBar: Responsive.isMobile(context) ? appBar(context, showText) : null,
       drawer: Responsive.isMobile(context) ? buildMobileMenu(context, 0) : null,
-      body: //Responsive.isMobile(context)          ?
-          buildMobileBody(
-        context,
-        aAnimationModels,
-        animationControllers,
-        hideloader,
-        showText,
-      ),
+      body: Responsive.isMobile(context)
+          ? buildMobileBody(
+              context,
+              aAnimationModels,
+              animationControllers,
+              hideloader,
+              showText,
+            )
+          : buildDesktopBody(
+              context,
+              aAnimationModels,
+              animationControllers,
+              hideloader,
+              showText,
+            ),
       //: Container(),
     );
   }

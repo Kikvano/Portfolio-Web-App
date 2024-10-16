@@ -35,6 +35,7 @@ class AppColors {
 
   // Light theme specific colors
   static const Color lightBackgroundColor = Color.fromARGB(255, 34, 34, 34);
+  static const Color lightCardColor = Color.fromARGB(255, 125, 125, 125);
   static const Color lightTextColor = Colors.white;
   static const Color lightActionColor = Colors.amber;
   static const Color lightGreenColor = Color.fromARGB(255, 109, 146, 109);
@@ -42,6 +43,7 @@ class AppColors {
   static const Color lightYellowColor = Color.fromARGB(255, 194, 166, 8);
   // Dark theme specific colors
   static const Color darkBackgroundColor = Color.fromARGB(255, 34, 34, 34);
+  static const Color darkCardColor = Color.fromARGB(255, 125, 125, 125);
   static const Color darkTextColor = Colors.white;
   static const Color darkActionColor = Colors.amber;
   static const Color darkGreenColor = Color.fromARGB(255, 78, 131, 78);

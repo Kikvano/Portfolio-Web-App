@@ -4,6 +4,7 @@ import '../../../../core/theme/theme.dart';
 import '../../../../core/utils/rsponsive.dart';
 import '../../../../core/widgets/mobile_menu.dart';
 import '../widgets/appbar.dart';
+import '../widgets/desktop_body.dart';
 import '../widgets/mobile_body.dart';
 
 class ExperiancePage extends StatefulWidget {
@@ -26,7 +27,7 @@ class _ExperiancePageState extends State<ExperiancePage> {
       backgroundColor: AppTheme.appBackgroundColor(context),
       appBar: Responsive.isMobile(context) ? appBar(context) : null,
       drawer: Responsive.isMobile(context) ? buildMobileMenu(context, 2) : null,
-      body: buildMobileBody(context),
+      body: Responsive.isMobile(context) ? buildMobileBody(context) : buildDesktopBody(context),
     );
   }
 }

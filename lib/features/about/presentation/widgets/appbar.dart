@@ -5,7 +5,10 @@ import '../../../../core/theme/theme.dart';
 AppBar appBar(BuildContext context) {
   return AppBar(
     backgroundColor: AppTheme.appBackgroundColor(context),
-    //title: Text('About Me', style: TextStyle(color: AppTheme.primaryTextColor(context))),
+    /*title: Align(
+      alignment: Alignment.centerRight,
+      child: Text('ABOUT ME', style: TextStyle(color: AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
+    ),*/
     leading: Builder(
       builder: (BuildContext context) {
         return IconButton(

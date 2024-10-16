@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/rsponsive.dart';
+import '../../../../core/utils/screensize.dart';
+
 class TypingTextEffect extends StatefulWidget {
   final List<String> texts;
   final Duration typingSpeed;
@@ -85,7 +88,7 @@ class TypingTextEffectState extends State<TypingTextEffect> with SingleTickerPro
         String currentText = widget.texts[_currentTextIndex].substring(0, _characterCount.value);
         return Text(
           currentText,
-          style: const TextStyle(fontSize: 25, color: Colors.amber, fontWeight: FontWeight.bold
+          style: TextStyle(fontSize: Responsive.isMobile(context) ? 25 : ScreenSize.width(context) / 32, color: Colors.amber, fontWeight: FontWeight.bold
               //fontFamily: 'Courier',
               //letterSpacing: 2,
               ),
