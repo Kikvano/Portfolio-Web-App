@@ -15,36 +15,15 @@ Widget buildDesktopBody(BuildContext context) {
   double fontSize() => ScreenSize.width(context) / 2 < 700 ? ScreenSize.width(context) / 2 : 700;
 
   return StatefulBuilder(builder: (BuildContext context, StateSetter setState) {
-    return SingleChildScrollView(
-      child: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                SizedBox(
-                  width: ScreenSize.width(context) * 3 / 5,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      for (int a = 0; a < buildDesktopMenu(context, 1).length; a++) buildDesktopMenu(context, 1)[a],
-                      const SizedBox(width: 12),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Center(
+    return Stack(
+      children: [
+        Center(
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 60),
-                //Text("ABOUT ME", style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: fontSize() / 11, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 20),
                 Container(
-                  margin: const EdgeInsets.only(left: 30, right: 30, top: 0, bottom: 15),
+                  margin: EdgeInsets.only(left: ScreenSize.width(context) > 1200 ? 50 : 30, right: ScreenSize.width(context) > 1200 ? 50 : 30, top: 50, bottom: 0),
                   decoration: BoxDecoration(
                     color: AppTheme.appBackgroundColor(context),
                     borderRadius: BorderRadius.circular(16), // Rounded corners
@@ -81,35 +60,35 @@ Widget buildDesktopBody(BuildContext context) {
                         ),
                         const SizedBox(height: 30),
                         /*  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          InkWell(
-                            onTap: () => urlLauncher(Uri.parse('https://linkedin.com/in/irakli-kikvadze-a79151314')),
-                            splashColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            child: Image.asset(
-                              'assets/images/linkedin_icon_128.png',
-                              width: 128,
-                              height: 128,
-                              color: AppTheme.primaryTextColor(context),
-                              fit: BoxFit.cover,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InkWell(
+                              onTap: () => urlLauncher(Uri.parse('https://linkedin.com/in/irakli-kikvadze-a79151314')),
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              child: Image.asset(
+                                'assets/images/linkedin_icon_128.png',
+                                width: 128,
+                                height: 128,
+                                color: AppTheme.primaryTextColor(context),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () => urlLauncher(Uri(scheme: 'mailto', path: 'kikvano@gmail.com')),
-                            splashColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            child: Image.asset(
-                              'assets/images/email_icon_128.png',
-                              width: 128,
-                              height: 128,
-                              color: AppTheme.primaryTextColor(context),
-                              fit: BoxFit.cover,
+                            InkWell(
+                              onTap: () => urlLauncher(Uri(scheme: 'mailto', path: 'kikvano@gmail.com')),
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              child: Image.asset(
+                                'assets/images/email_icon_128.png',
+                                width: 128,
+                                height: 128,
+                                color: AppTheme.primaryTextColor(context),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                   */
+                          ],
+                        ),
+                     */
                       ],
                     ),
                   ),
@@ -117,8 +96,30 @@ Widget buildDesktopBody(BuildContext context) {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Container(
+            width: double.infinity,
+            color: AppTheme.appBackgroundColor(context),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  width: ScreenSize.width(context) * 3 / 5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      for (int a = 0; a < buildDesktopMenu(context, 1).length; a++) buildDesktopMenu(context, 1)[a],
+                      const SizedBox(width: 12),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   });
 }

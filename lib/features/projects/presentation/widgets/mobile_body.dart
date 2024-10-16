@@ -108,7 +108,7 @@ Widget projectCards(
                               child: Center(
                                 child: AutoSizeText(
                                   projectList[index].projectDescription,
-                                  style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 18, fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 18),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
@@ -138,7 +138,7 @@ Widget projectCards(
                                 child: Center(
                                   child: AutoSizeText(
                                     projectList[index].projectFullDescription,
-                                    style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 16, fontWeight: FontWeight.bold),
+                                    style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 20),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),

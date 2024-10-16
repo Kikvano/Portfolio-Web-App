@@ -21,7 +21,7 @@ Widget buildDesktopBody(
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 10.0),
+          padding: const EdgeInsets.only(top: 20.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -45,10 +45,10 @@ Widget buildDesktopBody(
         Padding(
           padding: EdgeInsets.only(
               top: ScreenSize.width(context) > 1200
-                  ? 65
+                  ? 70
                   : ScreenSize.width(context) > 1000
-                      ? 55
-                      : 45,
+                      ? 65
+                      : 55,
               left: 10,
               right: 10),
           child: Center(
@@ -151,7 +151,7 @@ Widget projectCards(
                                   child: Center(
                                     child: AutoSizeText(
                                       projectList[index].projectDescription,
-                                      style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: titleFontSize(), fontWeight: FontWeight.bold),
+                                      style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: titleFontSize()),
                                       textAlign: TextAlign.center,
                                     ),
                                   ),
@@ -185,7 +185,7 @@ Widget projectCards(
                                     child: Center(
                                       child: AutoSizeText(
                                         projectList[index].projectFullDescription,
-                                        style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 16, fontWeight: FontWeight.bold),
+                                        style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 20),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),

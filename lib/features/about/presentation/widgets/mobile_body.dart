@@ -11,8 +11,8 @@ Widget buildMobileBody(BuildContext context) {
   }
 
   return StatefulBuilder(builder: (BuildContext context, StateSetter setState) {
-    return SingleChildScrollView(
-      child: Center(
+    return Center(
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
