@@ -16,8 +16,8 @@ Widget buildMobileBody(BuildContext context) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("ABOUT ME", style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 35, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 20),
+            //Text("ABOUT ME", style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 35, fontWeight: FontWeight.bold)),
+            //const SizedBox(height: 20),
             Container(
               margin: const EdgeInsets.only(left: 12.0, right: 12, top: 0, bottom: 15),
               decoration: BoxDecoration(

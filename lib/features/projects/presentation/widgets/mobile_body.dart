@@ -103,7 +103,7 @@ Widget projectCards(
                             child: Container(
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               height: (ScreenSize.width(context) - 22) * 1 / 4,
-                              color: AppTheme.blueColor(context),
+                              color: AppTheme.primaryTextColor(context).withAlpha(50),
                               //color: AppTheme.primaryTextColor(context).withAlpha(50),
                               child: Center(
                                 child: AutoSizeText(

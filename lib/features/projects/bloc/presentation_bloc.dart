@@ -20,7 +20,7 @@ class PresentationBloc extends Bloc<PresentationEvent, PresentationState> {
 
     var result = await fetchProjects();
 
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(milliseconds: 1000));
 
     emit(PresentationLoadedState(projectList: result));
   }

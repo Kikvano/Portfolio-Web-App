@@ -34,7 +34,7 @@ Widget buildDesktopBody(BuildContext context) {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        for (int a = 0; a < buildDesktopMenu(context).length; a++) buildDesktopMenu(context)[a],
+                        for (int a = 0; a < buildDesktopMenu(context, 2).length; a++) buildDesktopMenu(context, 2)[a],
                         const SizedBox(width: 12),
                       ],
                     ),
@@ -46,14 +46,14 @@ Widget buildDesktopBody(BuildContext context) {
               children: [
                 const SizedBox(height: 60),
                 //Text("SKILLS", style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: fontSize() / 11, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 20),
+                //const SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(left: 20.0, right: 10, top: 0, bottom: 20),
+                            margin: const EdgeInsets.only(left: 10.0, right: 5, top: 0, bottom: 10),
                             width: ScreenSize.width(context) - 20,
                             decoration: cardDecoration,
                             child: Column(
@@ -83,7 +83,7 @@ Widget buildDesktopBody(BuildContext context) {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 20.0, right: 10, top: 0, bottom: 20),
+                            margin: const EdgeInsets.only(left: 10.0, right: 5, top: 0, bottom: 10),
                             width: ScreenSize.width(context) - 20,
                             decoration: cardDecoration,
                             child: Column(
@@ -113,7 +113,7 @@ Widget buildDesktopBody(BuildContext context) {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 20.0, right: 10, top: 0, bottom: 20),
+                            margin: const EdgeInsets.only(left: 10.0, right: 5, top: 0, bottom: 10),
                             width: ScreenSize.width(context) - 20,
                             //height: ScreenSize.width(context) - 20,
                             decoration: cardDecoration,
@@ -140,7 +140,7 @@ Widget buildDesktopBody(BuildContext context) {
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(left: 10.0, right: 20, top: 0, bottom: 20),
+                            margin: const EdgeInsets.only(left: 5.0, right: 10, top: 0, bottom: 10),
                             width: ScreenSize.width(context) - 20,
                             //height: ScreenSize.width(context) - 20,
                             decoration: cardDecoration,
@@ -162,7 +162,7 @@ Widget buildDesktopBody(BuildContext context) {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 10.0, right: 20, top: 0, bottom: 20),
+                            margin: const EdgeInsets.only(left: 5.0, right: 10, top: 0, bottom: 10),
                             width: ScreenSize.width(context) - 20,
                             //height: ScreenSize.width(context) - 20,
                             decoration: cardDecoration,
@@ -193,7 +193,7 @@ Widget buildDesktopBody(BuildContext context) {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 10.0, right: 20, top: 0, bottom: 20),
+                            margin: const EdgeInsets.only(left: 5.0, right: 10, top: 0, bottom: 10),
                             width: ScreenSize.width(context) - 20,
                             decoration: cardDecoration,
                             child: Column(

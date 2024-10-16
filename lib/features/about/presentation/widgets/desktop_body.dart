@@ -28,7 +28,7 @@ Widget buildDesktopBody(BuildContext context) {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      for (int a = 0; a < buildDesktopMenu(context).length; a++) buildDesktopMenu(context)[a],
+                      for (int a = 0; a < buildDesktopMenu(context, 1).length; a++) buildDesktopMenu(context, 1)[a],
                       const SizedBox(width: 12),
                     ],
                   ),

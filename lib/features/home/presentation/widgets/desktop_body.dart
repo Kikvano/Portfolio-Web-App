@@ -61,7 +61,7 @@ Widget buildDesktopBody(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        for (int a = 0; a < buildDesktopMenu(context).length; a++) buildDesktopMenu(context)[a],
+                        for (int a = 0; a < buildDesktopMenu(context, 0).length; a++) buildDesktopMenu(context, 0)[a],
                         const SizedBox(width: 12),
                       ],
                     ),
@@ -117,8 +117,8 @@ Widget buildDesktopBody(
                             child: Lottie.asset(
                               'assets/animations/animation_1727632377489.json',
                               controller: animationControllers.lottieController, // Attach the Lottie controller
-                              width: imageSize() / 1.14, //300,
-                              height: imageSize() / 1.14,
+                              width: imageSize() / 1.2, //1.14, //300,
+                              height: imageSize() / 1.2,
                               fit: BoxFit.cover,
                               onLoaded: (composition) {
                                 animationControllers.lottieController.duration = composition.duration;
@@ -144,7 +144,7 @@ Widget buildDesktopBody(
                                     alignment: Alignment.center,
                                     child: isFront
                                         ? Image.asset(
-                                            'assets/images/profile_pic.png',
+                                            'assets/images/profile_pic_flip.png',
                                             width: imageSize() / 1.48, //230,
                                             height: imageSize() / 1.48,
                                             fit: BoxFit.cover,
@@ -153,7 +153,7 @@ Widget buildDesktopBody(
                                             transform: Matrix4.identity()..rotateY(pi),
                                             alignment: Alignment.center,
                                             child: Image.asset(
-                                              'assets/images/profile_pic_flip.png',
+                                              'assets/images/profile_pic.png',
                                               width: imageSize() / 1.48,
                                               height: imageSize() / 1.48,
                                               fit: BoxFit.cover,

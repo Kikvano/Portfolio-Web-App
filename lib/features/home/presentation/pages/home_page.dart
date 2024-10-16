@@ -70,6 +70,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       if (status == AnimationStatus.completed) {
         animationControllers.textFadeController.forward();
         setState(() => showText = true);
+        if (animationControllers.flipController.isCompleted || animationControllers.flipController.velocity > 0) {
+          animationControllers.flipController.reverse();
+        } else {
+          animationControllers.flipController.forward();
+        }
       }
     });
 

@@ -8,12 +8,14 @@ class ProjectRepositoryImpl extends ProjectRepository {
   Future<List<ProjectEntity>> fetchProjects() {
     List<ProjectModel> projectList = [];
     List<String> urlList = [
+      'assets/images/projects/portfolio_project_cover.jpg',
       'assets/images/projects/kiksmart_project_cover.jpg',
       'assets/images/projects/springfix_project_cover.jpg',
       'assets/images/projects/greenhouse_project_cover.jpg',
       'assets/images/projects/gh_pcb_project_cover.jpg',
     ];
     List<String> descriptionList = [
+      'This Portfolio Web Application',
       'Mobile Application for pairing and controlling IOT devices over WiFi and/or Cloud.',
       'Android Kiosk application for managing machines over MQTT in a factory environment.',
       'Universal fully automated GreenHouse climate controller.',
@@ -21,6 +23,7 @@ class ProjectRepositoryImpl extends ProjectRepository {
     ];
 
     List<String> fulldescriptionList = [
+      'Overview: ',
       'Overview: \nThe application is built using the Flutter framework and is available on both Android and iOS platforms. It supports user registration, pairing multiple IoT devices over WiFi, and managing them locally via WebSocket or remotely through Firebase RTDB. Additionally, it provides background notifications to inform users of device status changes, sensor out-of-range alerts, and more. \nTools and Packages used: \nBLoC, GoRouter, GetIt, SharedPreffs, WebSocket, Firebase services (Auth, Functions, Realtime Database, Firestore), Charts, Smartconfig and more.',
       'Overview: \nThe Android Kiosk application, developed using the Flutter framework, is specially designed for use primarily on tablets. It utilizes an MQTT backend to connect with numerous machines, allowing workers to control them seamlessly using their RFID cards.\nTools and Packages used: \nBLoC, GoRouter, GetIt, SharedPreffs, MQTT, NFC and more.',
       'Overview: \nCompletely handmade IOT project designed to automate the growing process inside greenhouses, grow tents, etc. Controller can be used for both Soil and Hydroponic setups. Equipped with 2.8" touch screen display, it offers pairing and control via mobile application (locally or remote over cloud), ability to connect various Analog and Digital Sensors, automated control solutions (with time, In cycle or by sensor value), App background notifications (on relay or sensor status changes), history of Sensors and Relay activity, Live Monitoring and more.\nTools and Packages used: \nPlatformIO/C++ (Embedded software), Kicad (PCB design), Flutter (Cross-platform mobile application).',
@@ -30,15 +33,16 @@ class ProjectRepositoryImpl extends ProjectRepository {
     List<String> typeList = [
       'mobileApp',
       'mobileApp',
+      'mobileApp',
       'embedded',
       'pcb',
     ];
-    List<String> playStoreUrlList = ['url', 'url', '', ''];
-    List<String> appStoreUrlList = ['url', '', '', ''];
-    List<String> githubUrlList = ['', '', '', ''];
-    List<String> apkUrlList = ['', '', '', ''];
-    List<String> ipaUrlList = ['', '', '', ''];
-    List<String> liveDemoUrlList = ['', '', '', ''];
+    List<String> playStoreUrlList = ['', 'url', 'url', '', ''];
+    List<String> appStoreUrlList = ['', 'url', '', '', ''];
+    List<String> githubUrlList = ['', '', '', '', ''];
+    List<String> apkUrlList = ['', '', '', '', ''];
+    List<String> ipaUrlList = ['', '', '', '', ''];
+    List<String> liveDemoUrlList = ['', '', '', '', ''];
 
     for (int a = 0; a < urlList.length; a++) {
       projectList.add(ProjectModel(

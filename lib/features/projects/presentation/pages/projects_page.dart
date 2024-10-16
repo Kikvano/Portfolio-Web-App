@@ -8,6 +8,7 @@ import '../../../../core/widgets/mobile_menu.dart';
 import '../../bloc/presentation_bloc.dart';
 import '../../domain/entities/projects_entity.dart';
 import '../widgets/appbar.dart';
+import '../widgets/desktop_body.dart';
 import '../widgets/mobile_body.dart';
 
 class ProjectsPage extends StatefulWidget {
@@ -49,10 +50,6 @@ class ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMixi
         CurvedAnimation(parent: flipController[a], curve: Curves.easeInOut),
       ));
     }
-    /*  flipController = AnimationController(duration: const Duration(milliseconds: 600), vsync: this);
-    flipAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: flipController, curve: Curves.easeInOut),
-    );*/
   }
 
   @override
@@ -66,19 +63,32 @@ class ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMixi
         builder: (context, state) {
           if (state is PresentationLoadedState) {
             projectList = state.projectList;
-            //print(projectList[1].projectDescription);
             configureControllers(projectList.length);
             for (int a = 0; a < projectList.length; a++) {
               isVisible.add(false);
             }
-            return buildMobileBody(context, projectList, isVisible, flipController, flipAnimation);
+            return Responsive.isMobile(context)
+                ? buildMobileBody(
+                    context,
+                    projectList,
+                    isVisible,
+                    flipController,
+                    flipAnimation,
+                  )
+                : buildDesktopBody(
+                    context,
+                    projectList,
+                    isVisible,
+                    flipController,
+                    flipAnimation,
+                  );
           }
           return Center(
             child: Opacity(
               opacity: 0.05,
               child: Lottie.asset(
                 'assets/animations/animation_1727694415537.json',
-                controller: loadingController, // Attach the Lottie controller
+                controller: loadingController,
                 width: 340,
                 height: 340,
                 fit: BoxFit.cover,

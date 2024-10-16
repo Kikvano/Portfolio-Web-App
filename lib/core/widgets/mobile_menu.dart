@@ -23,62 +23,106 @@ Widget buildMobileMenu(BuildContext context, int page) {
               ),
             ),
           ),
-          if (page != 0)
-            InkWell(
-              onHover: (value) => setState(() => isTileHovered[0] = value),
-              onTap: () {},
-              child: ListTile(
-                leading: Icon(Icons.home, color: isTileHovered[0] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context)),
-                title: Text('Home', style: TextStyle(color: isTileHovered[0] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
-                hoverColor: AppTheme.primaryActionColor(context),
-                onTap: () {
-                  Navigator.pop(context); // Close the drawer
-                  context.pushNamed(AppRoutes.homeRoute);
-                },
-              ),
+          InkWell(
+            onHover: (value) => setState(() => isTileHovered[0] = value),
+            onTap: () {},
+            child: ListTile(
+              leading: Icon(Icons.home,
+                  color: isTileHovered[0]
+                      ? AppTheme.appBackgroundColor(context)
+                      : page == 0
+                          ? AppTheme.primaryActionColor(context)
+                          : AppTheme.primaryTextColor(context)),
+              title: Text('Home',
+                  style: TextStyle(
+                      color: isTileHovered[0]
+                          ? AppTheme.appBackgroundColor(context)
+                          : page == 0
+                              ? AppTheme.primaryActionColor(context)
+                              : AppTheme.primaryTextColor(context),
+                      fontWeight: FontWeight.bold)),
+              hoverColor: AppTheme.primaryActionColor(context),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+                context.pushNamed(AppRoutes.homeRoute);
+              },
             ),
-          if (page != 1)
-            InkWell(
-              onHover: (value) => setState(() => isTileHovered[1] = value),
-              onTap: () {},
-              child: ListTile(
-                leading: Icon(Icons.person, color: isTileHovered[1] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context)),
-                title: Text('About', style: TextStyle(color: isTileHovered[1] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
-                hoverColor: AppTheme.primaryActionColor(context),
-                onTap: () {
-                  Navigator.pop(context); // Close the drawer
-                  context.pushNamed(AppRoutes.aboutRoute);
-                },
-              ),
+          ),
+          InkWell(
+            onHover: (value) => setState(() => isTileHovered[1] = value),
+            onTap: () {},
+            child: ListTile(
+              leading: Icon(Icons.person,
+                  color: isTileHovered[1]
+                      ? AppTheme.appBackgroundColor(context)
+                      : page == 1
+                          ? AppTheme.primaryActionColor(context)
+                          : AppTheme.primaryTextColor(context)),
+              title: Text('About',
+                  style: TextStyle(
+                      color: isTileHovered[1]
+                          ? AppTheme.appBackgroundColor(context)
+                          : page == 1
+                              ? AppTheme.primaryActionColor(context)
+                              : AppTheme.primaryTextColor(context),
+                      fontWeight: FontWeight.bold)),
+              hoverColor: AppTheme.primaryActionColor(context),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+                context.pushNamed(AppRoutes.aboutRoute);
+              },
             ),
-          if (page != 2)
-            InkWell(
-              onHover: (value) => setState(() => isTileHovered[2] = value),
-              onTap: () {},
-              child: ListTile(
-                leading: Icon(Icons.work, color: isTileHovered[2] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context)),
-                title: Text('Skills', style: TextStyle(color: isTileHovered[2] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
-                hoverColor: AppTheme.primaryActionColor(context),
-                onTap: () {
-                  Navigator.pop(context); // Close the drawer
-                  context.pushNamed(AppRoutes.experianceRoute);
-                },
-              ),
+          ),
+          InkWell(
+            onHover: (value) => setState(() => isTileHovered[2] = value),
+            onTap: () {},
+            child: ListTile(
+              leading: Icon(Icons.work,
+                  color: isTileHovered[2]
+                      ? AppTheme.appBackgroundColor(context)
+                      : page == 2
+                          ? AppTheme.primaryActionColor(context)
+                          : AppTheme.primaryTextColor(context)),
+              title: Text('Skills',
+                  style: TextStyle(
+                      color: isTileHovered[2]
+                          ? AppTheme.appBackgroundColor(context)
+                          : page == 2
+                              ? AppTheme.primaryActionColor(context)
+                              : AppTheme.primaryTextColor(context),
+                      fontWeight: FontWeight.bold)),
+              hoverColor: AppTheme.primaryActionColor(context),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+                context.pushNamed(AppRoutes.experianceRoute);
+              },
             ),
-          if (page != 3)
-            InkWell(
-              onHover: (value) => setState(() => isTileHovered[3] = value),
-              onTap: () {},
-              child: ListTile(
-                leading: Icon(Icons.folder, color: isTileHovered[3] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context)),
-                title: Text('Projects', style: TextStyle(color: isTileHovered[3] ? AppTheme.appBackgroundColor(context) : AppTheme.primaryTextColor(context), fontWeight: FontWeight.bold)),
-                hoverColor: AppTheme.primaryActionColor(context),
-                onTap: () {
-                  Navigator.pop(context); // Close the drawer
-                  context.pushNamed(AppRoutes.projectsRoute);
-                },
-              ),
+          ),
+          InkWell(
+            onHover: (value) => setState(() => isTileHovered[3] = value),
+            onTap: () {},
+            child: ListTile(
+              leading: Icon(Icons.folder,
+                  color: isTileHovered[3]
+                      ? AppTheme.appBackgroundColor(context)
+                      : page == 3
+                          ? AppTheme.primaryActionColor(context)
+                          : AppTheme.primaryTextColor(context)),
+              title: Text('Projects',
+                  style: TextStyle(
+                      color: isTileHovered[3]
+                          ? AppTheme.appBackgroundColor(context)
+                          : page == 3
+                              ? AppTheme.primaryActionColor(context)
+                              : AppTheme.primaryTextColor(context),
+                      fontWeight: FontWeight.bold)),
+              hoverColor: AppTheme.primaryActionColor(context),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+                context.pushNamed(AppRoutes.projectsRoute);
+              },
             ),
+          ),
           /*  if (page != 4)
             InkWell(
               onHover: (value) => setState(() => isTileHovered[4] = value),

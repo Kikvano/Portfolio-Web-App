@@ -92,8 +92,8 @@ Widget buildMobileBody(
                           child: Lottie.asset(
                             'assets/animations/animation_1727632377489.json',
                             controller: animationControllers.lottieController, // Attach the Lottie controller
-                            width: 300,
-                            height: 300,
+                            width: 290,
+                            height: 290,
                             fit: BoxFit.cover,
                             onLoaded: (composition) {
                               animationControllers.lottieController.duration = composition.duration;
@@ -119,7 +119,7 @@ Widget buildMobileBody(
                                   alignment: Alignment.center,
                                   child: isFront
                                       ? Image.asset(
-                                          'assets/images/profile_pic.png',
+                                          'assets/images/profile_pic_flip.png',
                                           width: 230,
                                           height: 230,
                                           fit: BoxFit.cover,
@@ -128,7 +128,7 @@ Widget buildMobileBody(
                                           transform: Matrix4.identity()..rotateY(pi),
                                           alignment: Alignment.center,
                                           child: Image.asset(
-                                            'assets/images/profile_pic_flip.png',
+                                            'assets/images/profile_pic.png',
                                             width: 230,
                                             height: 230,
                                             fit: BoxFit.cover,

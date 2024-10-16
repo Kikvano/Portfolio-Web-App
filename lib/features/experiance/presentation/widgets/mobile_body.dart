@@ -24,9 +24,9 @@ Widget buildMobileBody(BuildContext context) {
           child: Column(
             children: [
               //Text("SKILLS", style: TextStyle(color: AppTheme.primaryTextColor(context), fontSize: 25, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 20),
+              //const SizedBox(height: 20),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20, top: 0, bottom: 20),
+                margin: const EdgeInsets.only(left: 10.0, right: 10, top: 0, bottom: 10),
                 width: ScreenSize.width(context) - 20,
                 decoration: cardDecoration,
                 child: Column(
@@ -56,7 +56,7 @@ Widget buildMobileBody(BuildContext context) {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20, top: 0, bottom: 20),
+                margin: const EdgeInsets.only(left: 10.0, right: 10, top: 0, bottom: 10),
                 width: ScreenSize.width(context) - 20,
                 decoration: cardDecoration,
                 child: Column(
@@ -86,7 +86,7 @@ Widget buildMobileBody(BuildContext context) {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20, top: 0, bottom: 20),
+                margin: const EdgeInsets.only(left: 10.0, right: 10, top: 0, bottom: 10),
                 width: ScreenSize.width(context) - 20,
                 //height: ScreenSize.width(context) - 20,
                 decoration: cardDecoration,
@@ -108,7 +108,7 @@ Widget buildMobileBody(BuildContext context) {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20, top: 0, bottom: 20),
+                margin: const EdgeInsets.only(left: 10.0, right: 10, top: 0, bottom: 10),
                 width: ScreenSize.width(context) - 20,
                 //height: ScreenSize.width(context) - 20,
                 decoration: cardDecoration,
@@ -139,7 +139,7 @@ Widget buildMobileBody(BuildContext context) {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20, top: 0, bottom: 20),
+                margin: const EdgeInsets.only(left: 10.0, right: 10, top: 0, bottom: 10),
                 width: ScreenSize.width(context) - 20,
                 //height: ScreenSize.width(context) - 20,
                 decoration: cardDecoration,
@@ -160,7 +160,7 @@ Widget buildMobileBody(BuildContext context) {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20, top: 0, bottom: 20),
+                margin: const EdgeInsets.only(left: 10.0, right: 10, top: 0, bottom: 10),
                 width: ScreenSize.width(context) - 20,
                 decoration: cardDecoration,
                 child: Column(
