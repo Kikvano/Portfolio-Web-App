@@ -37,12 +37,12 @@ class ProjectRepositoryImpl extends ProjectRepository {
       'embedded',
       'pcb',
     ];
-    List<String> playStoreUrlList = ['url', 'url', 'url', '', ''];
+    List<String> playStoreUrlList = ['url', 'https://play.google.com/store/apps/details?id=com.kikva.kiksmart', 'https://play.google.com/store/apps/details?id=com.springfix.mqtt', '', ''];
     List<String> appStoreUrlList = ['url', 'url', '', '', ''];
     List<String> githubUrlList = ['', '', '', '', ''];
     List<String> apkUrlList = ['', '', '', '', ''];
     List<String> ipaUrlList = ['', '', '', '', ''];
-    List<String> liveDemoUrlList = ['https://portfolio-e5f72.web.app/', '', '', '', ''];
+    List<String> liveDemoUrlList = ['https://portfolio-e5f72.web.app', '', '', '', ''];
 
     for (int a = 0; a < urlList.length; a++) {
       projectList.add(ProjectModel(

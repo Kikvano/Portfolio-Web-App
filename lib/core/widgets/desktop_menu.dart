@@ -12,10 +12,10 @@ List<Widget> buildDesktopMenu(BuildContext context, int page) {
     overlayColor: WidgetStateProperty.resolveWith<Color?>(
       (Set<WidgetState> states) {
         if (states.contains(WidgetState.hovered)) {
-          return AppTheme.primaryTextColor(context).withAlpha(50);
+          return AppTheme.primaryTextColor(context).withAlpha(20);
         }
         if (states.contains(WidgetState.pressed)) {
-          return AppTheme.primaryActionColor(context).withAlpha(20);
+          return AppTheme.primaryTextColor(context).withAlpha(20);
         }
         return null; // Default color
       },

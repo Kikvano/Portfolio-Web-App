@@ -18,14 +18,13 @@ Widget buildDesktopBody(
   bool showText,
 ) {
   List<bool> isIconsHover = [false, false, false];
-  // In case half of the screen width is less than 512, then return appropriate value, else 512
-  double imageSize() => ScreenSize.width(context) / 2 < 700 ? ScreenSize.width(context) / 2 : 700;
+  double imageSize() => ScreenSize.width(context) / 2.3 < 700 ? ScreenSize.width(context) / 2.3 : 700;
 
   void onMouseEnter(bool isMouseEnter) {
     if (isMouseEnter) {
-      animationControllers.flipController.forward(); // Start flipping on mouse enter
-    } else {
       animationControllers.flipController.reverse(); // Reverse flip on mouse exit
+    } else {
+      animationControllers.flipController.forward(); // Start flipping on mouse enter
     }
   }
 

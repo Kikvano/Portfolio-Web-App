@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -89,6 +90,12 @@ Widget projectCards(
   List<AnimationController> flipController,
   List<Animation> flipAnimation,
 ) {
+  Future<void> urlLauncher(Uri uri) async {
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $uri');
+    }
+  }
+
   void onTap() {
     // On tap, toggle the flip state
     if (flipController[index].isCompleted || flipController[index].velocity > 0) {
@@ -203,62 +210,74 @@ Widget projectCards(
                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                           children: [
                                             if (projectList[index].appStoreUrl != '')
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10), // Rounded corners
-                                                  border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                  child: Image.asset(
-                                                    'assets/images/appstore_button.png',
-                                                    fit: BoxFit.cover,
-                                                    width: containerSizeDraft * 0.3,
+                                              InkWell(
+                                                onTap: () => urlLauncher(Uri.parse(projectList[index].appStoreUrl)),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(10), // Rounded corners
+                                                    border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                                    child: Image.asset(
+                                                      'assets/images/appstore_button.png',
+                                                      fit: BoxFit.cover,
+                                                      width: containerSizeDraft * 0.3,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             if (projectList[index].playStoreUrl != '')
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10), // Rounded corners
-                                                  border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                  child: Image.asset(
-                                                    'assets/images/playstore_button.png',
-                                                    fit: BoxFit.cover,
-                                                    width: containerSizeDraft * 0.3,
+                                              InkWell(
+                                                onTap: () => urlLauncher(Uri.parse(projectList[index].playStoreUrl)),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(10), // Rounded corners
+                                                    border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                                    child: Image.asset(
+                                                      'assets/images/playstore_button.png',
+                                                      fit: BoxFit.cover,
+                                                      width: containerSizeDraft * 0.3,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             if (projectList[index].githubUrl != '')
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10), // Rounded corners
-                                                  border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                  child: Image.asset(
-                                                    'assets/images/github_button.png',
-                                                    fit: BoxFit.cover,
-                                                    width: containerSizeDraft * 0.3,
+                                              InkWell(
+                                                onTap: () => urlLauncher(Uri.parse(projectList[index].githubUrl)),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(10), // Rounded corners
+                                                    border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                                    child: Image.asset(
+                                                      'assets/images/github_button.png',
+                                                      fit: BoxFit.cover,
+                                                      width: containerSizeDraft * 0.3,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             if (projectList[index].liveDemoUrl != '')
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10), // Rounded corners
-                                                  border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                  child: Image.asset(
-                                                    'assets/images/web_button.png',
-                                                    fit: BoxFit.cover,
-                                                    width: containerSizeDraft * 0.3,
+                                              InkWell(
+                                                onTap: () => urlLauncher(Uri.parse(projectList[index].liveDemoUrl)),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(10), // Rounded corners
+                                                    border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                                    child: Image.asset(
+                                                      'assets/images/web_button.png',
+                                                      fit: BoxFit.cover,
+                                                      width: containerSizeDraft * 0.3,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
