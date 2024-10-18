@@ -234,6 +234,42 @@ Widget projectCards(
                                               ),
                                             ),
                                           ),
+                                        if (projectList[index].apkUrl != '')
+                                          InkWell(
+                                            onTap: () => urlLauncher(Uri.parse(projectList[index].apkUrl)),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10), // Rounded corners
+                                                border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
+                                              ),
+                                              child: ClipRRect(
+                                                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                                child: Image.asset(
+                                                  'assets/images/getapk_button.png',
+                                                  fit: BoxFit.cover,
+                                                  width: (ScreenSize.width(context) - 20) * 0.3,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (projectList[index].ipaUrl != '')
+                                          InkWell(
+                                            onTap: () => urlLauncher(Uri.parse(projectList[index].ipaUrl)),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10), // Rounded corners
+                                                border: Border.all(width: 1, color: AppTheme.appBackgroundColor(context)),
+                                              ),
+                                              child: ClipRRect(
+                                                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                                child: Image.asset(
+                                                  'assets/images/testflight_button.png',
+                                                  fit: BoxFit.cover,
+                                                  width: (ScreenSize.width(context) - 20) * 0.3,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                       ],
                                     ),
                                   ),

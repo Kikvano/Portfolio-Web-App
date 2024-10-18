@@ -37,10 +37,10 @@ class ProjectRepositoryImpl extends ProjectRepository {
       'embedded',
       'pcb',
     ];
-    List<String> playStoreUrlList = ['url', 'https://play.google.com/store/apps/details?id=com.kikva.kiksmart', 'https://play.google.com/store/apps/details?id=com.springfix.mqtt', '', ''];
-    List<String> appStoreUrlList = ['url', 'url', '', '', ''];
+    List<String> playStoreUrlList = ['', 'https://play.google.com/store/apps/details?id=com.kikva.kiksmart', 'https://play.google.com/store/apps/details?id=com.springfix.mqtt', '', ''];
+    List<String> appStoreUrlList = ['', 'url', '', '', ''];
     List<String> githubUrlList = ['', '', '', '', ''];
-    List<String> apkUrlList = ['', '', '', '', ''];
+    List<String> apkUrlList = ['https://drive.google.com/file/d/1nxCpMSiqooLwuy2cGla6gyR2NCaHts_1/view?usp=sharing', '', '', '', ''];
     List<String> ipaUrlList = ['', '', '', '', ''];
     List<String> liveDemoUrlList = ['https://portfolio-e5f72.web.app', '', '', '', ''];
 
