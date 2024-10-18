@@ -18,15 +18,18 @@ Widget buildMobileBody(
   List<bool> isIconsHover = [false, false, false];
   void onMouseEnter(bool isMouseEnter) {
     if (isMouseEnter) {
-      animationControllers.flipController.forward(); // Start flipping on mouse enter
+      animationControllers.flipController
+          .forward(); // Start flipping on mouse enter
     } else {
-      animationControllers.flipController.reverse(); // Reverse flip on mouse exit
+      animationControllers.flipController
+          .reverse(); // Reverse flip on mouse exit
     }
   }
 
   void onTap() {
     // On tap, toggle the flip state
-    if (animationControllers.flipController.isCompleted || animationControllers.flipController.velocity > 0) {
+    if (animationControllers.flipController.isCompleted ||
+        animationControllers.flipController.velocity > 0) {
       animationControllers.flipController.reverse();
     } else {
       animationControllers.flipController.forward();
@@ -34,7 +37,9 @@ Widget buildMobileBody(
   }
 
   Future<void> urlLauncher(Uri uri) async {
-    if (!await launchUrl(uri)) {
+    try {
+      !await launchUrl(uri);
+    } catch (_) {
       throw Exception('Could not launch $uri');
     }
   }
@@ -45,9 +50,11 @@ Widget buildMobileBody(
         alignment: Alignment.center,
         children: [
           SlideTransition(
-            position: aAnimationModels.upwardMoveAnimation, // Use the upward move animation
+            position: aAnimationModels
+                .upwardMoveAnimation, // Use the upward move animation
             child: SlideTransition(
-              position: aAnimationModels.moveAnimation, // Use the move animation for vertical movement
+              position: aAnimationModels
+                  .moveAnimation, // Use the move animation for vertical movement
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -57,12 +64,14 @@ Widget buildMobileBody(
                       opacity: 0.05,
                       child: Lottie.asset(
                         'assets/animations/animation_1727694415537.json',
-                        controller: animationControllers.loadingController, // Attach the Lottie controller
+                        controller: animationControllers
+                            .loadingController, // Attach the Lottie controller
                         width: 340,
                         height: 340,
                         fit: BoxFit.cover,
                         onLoaded: (composition) {
-                          animationControllers.loadingController.duration = const Duration(seconds: 5);
+                          animationControllers.loadingController.duration =
+                              const Duration(seconds: 5);
                         },
                       ),
                     ),
@@ -91,30 +100,36 @@ Widget buildMobileBody(
                           opacity: 0.3,
                           child: Lottie.asset(
                             'assets/animations/animation_1727632377489.json',
-                            controller: animationControllers.lottieController, // Attach the Lottie controller
+                            controller: animationControllers
+                                .lottieController, // Attach the Lottie controller
                             width: 290,
                             height: 290,
                             fit: BoxFit.cover,
                             onLoaded: (composition) {
-                              animationControllers.lottieController.duration = composition.duration;
+                              animationControllers.lottieController.duration =
+                                  composition.duration;
                             },
                           ),
                         ),
                         MouseRegion(
-                          onEnter: (_) => onMouseEnter(true), // Detect mouse enter
-                          onExit: (_) => onMouseEnter(false), // Detect mouse exit
+                          onEnter: (_) =>
+                              onMouseEnter(true), // Detect mouse enter
+                          onExit: (_) =>
+                              onMouseEnter(false), // Detect mouse exit
                           child: GestureDetector(
                             onTap: onTap, // Detect click to toggle flip
                             child: AnimatedBuilder(
                               animation: animationControllers.flipController,
                               builder: (context, child) {
                                 // Calculate the rotation value for the flip effect
-                                final angle = aAnimationModels.flipAnimation.value * pi;
+                                final angle =
+                                    aAnimationModels.flipAnimation.value * pi;
                                 final isFront = angle < pi / 2;
 
                                 return Transform(
                                   transform: Matrix4.identity()
-                                    ..setEntry(3, 2, 0.001) // Perspective to give the flip depth
+                                    ..setEntry(3, 2,
+                                        0.001) // Perspective to give the flip depth
                                     ..rotateY(angle), // Rotate along Y-axis
                                   alignment: Alignment.center,
                                   child: isFront
@@ -125,7 +140,8 @@ Widget buildMobileBody(
                                           fit: BoxFit.cover,
                                         )
                                       : Transform(
-                                          transform: Matrix4.identity()..rotateY(pi),
+                                          transform: Matrix4.identity()
+                                            ..rotateY(pi),
                                           alignment: Alignment.center,
                                           child: Image.asset(
                                             'assets/images/profile_pic.png',
@@ -153,12 +169,24 @@ Widget buildMobileBody(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 250),
-                  const Text("Hello, This is", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                  const Text("Hello, This is",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
                   const SizedBox(height: 5),
-                  const Text("IRAKLI KIKVADZE", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold)),
+                  const Text("IRAKLI KIKVADZE",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold)),
                   const SizedBox(height: 10),
                   const TypingTextEffect(
-                    texts: ['Mobile Developer', 'Embedded Developer', 'PCB Designer'],
+                    texts: [
+                      'Mobile Developer',
+                      'Embedded Developer',
+                      'PCB Designer'
+                    ],
                   ),
                   const SizedBox(height: 30),
                   Padding(
@@ -167,7 +195,8 @@ Widget buildMobileBody(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         InkWell(
-                          onTap: () => urlLauncher(Uri.parse('https://github.com/Kikvano')),
+                          onTap: () => urlLauncher(
+                              Uri.parse('https://github.com/Kikvano')),
                           onHover: (value) => setState(() {
                             isIconsHover[0] = value;
                           }),
@@ -177,12 +206,15 @@ Widget buildMobileBody(
                             'assets/images/github_icon_128.png',
                             width: 80,
                             height: 80,
-                            color: isIconsHover[0] ? AppTheme.primaryActionColor(context) : AppTheme.primaryTextColor(context),
+                            color: isIconsHover[0]
+                                ? AppTheme.primaryActionColor(context)
+                                : AppTheme.primaryTextColor(context),
                             fit: BoxFit.cover,
                           ),
                         ),
                         InkWell(
-                          onTap: () => urlLauncher(Uri.parse('https://linkedin.com/in/irakli-kikvadze-a79151314')),
+                          onTap: () => urlLauncher(Uri.parse(
+                              'https://linkedin.com/in/irakli-kikvadze-a79151314')),
                           onHover: (value) => setState(() {
                             isIconsHover[1] = value;
                           }),
@@ -192,12 +224,15 @@ Widget buildMobileBody(
                             'assets/images/linkedin_icon_128.png',
                             width: 80,
                             height: 80,
-                            color: isIconsHover[1] ? AppTheme.primaryActionColor(context) : AppTheme.primaryTextColor(context),
+                            color: isIconsHover[1]
+                                ? AppTheme.primaryActionColor(context)
+                                : AppTheme.primaryTextColor(context),
                             fit: BoxFit.cover,
                           ),
                         ),
                         InkWell(
-                          onTap: () => urlLauncher(Uri(scheme: 'mailto', path: 'kikvano@gmail.com')),
+                          onTap: () => urlLauncher(
+                              Uri(scheme: 'mailto', path: 'kikvano@gmail.com')),
                           onHover: (value) => setState(() {
                             isIconsHover[2] = value;
                           }),
@@ -207,7 +242,9 @@ Widget buildMobileBody(
                             'assets/images/email_icon_128.png',
                             width: 80,
                             height: 80,
-                            color: isIconsHover[2] ? AppTheme.primaryActionColor(context) : AppTheme.primaryTextColor(context),
+                            color: isIconsHover[2]
+                                ? AppTheme.primaryActionColor(context)
+                                : AppTheme.primaryTextColor(context),
                             fit: BoxFit.cover,
                           ),
                         ),
